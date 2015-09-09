@@ -175,13 +175,13 @@ require_npm trash
 # https://github.com/MrRio/vtop
 require_npm vtop
 
-###############################################################################
-bot "Ruby Gems..."
-###############################################################################
-require_brew rbenv
-require_brew ruby-build
-eval "$(rbenv init -)"
-require_gem git-up
+# ###############################################################################
+# bot "Ruby Gems..."
+# ###############################################################################
+# require_brew rbenv
+# require_brew ruby-build
+# eval "$(rbenv init -)"
+# require_gem git-up
 
 ###############################################################################
 # Native Apps (via brew cask)                                                 #
@@ -328,19 +328,21 @@ sudo chflags uchg /Private/var/vm/sleepimage;ok
 #running "Add a spacer to the right side of the Dock (where the Trash is)"
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}';ok
 
-running "Set a custom wallpaper image"
+# running "Set a custom wallpaper image"
 # `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-sudo ln -s ~/.dotfiles/img/wallpaper.jpg /System/Library/CoreServices/DefaultDesktop.jpg;ok
+# rm -rf ~/Library/Application Support/Dock/desktoppicture.db
+# sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
+# sudo ln -s ~/.dotfiles/img/wallpaper.jpg /System/Library/CoreServices/DefaultDesktop.jpg;ok
 
 
 ################################################
 bot "Standard System Changes"
 ################################################
-running "always boot in verbose mode (not OSX GUI mode)"
-sudo nvram boot-args="-v";ok
+# running "always boot in verbose mode (not OSX GUI mode)"
+# sudo nvram boot-args="-v";ok
+# to revert 
+# sudo nvram boot-args=" ";ok
 
 running "allow 'locate' command"
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1;ok
@@ -647,28 +649,28 @@ running "Add iOS Simulator to Launchpad"
 sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app";ok
 
 
-bot "Configuring Hot Corners"
-# Possible values:
-#  0: no-op
-#  2: Mission Control
-#  3: Show application windows
-#  4: Desktop
-#  5: Start screen saver
-#  6: Disable screen saver
-#  7: Dashboard
-# 10: Put display to sleep
-# 11: Launchpad
-# 12: Notification Center
+# bot "Configuring Hot Corners"
+# # Possible values:
+# #  0: no-op
+# #  2: Mission Control
+# #  3: Show application windows
+# #  4: Desktop
+# #  5: Start screen saver
+# #  6: Disable screen saver
+# #  7: Dashboard
+# # 10: Put display to sleep
+# # 11: Launchpad
+# # 12: Notification Center
 
-running "Top left screen corner → Mission Control"
-defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 0;ok
-running "Top right screen corner → Desktop"
-defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 0;ok
-running "Bottom right screen corner → Start screen saver"
-defaults write com.apple.dock wvous-br-corner -int 5
-defaults write com.apple.dock wvous-br-modifier -int 0;ok
+# running "Top left screen corner → Mission Control"
+# defaults write com.apple.dock wvous-tl-corner -int 2
+# defaults write com.apple.dock wvous-tl-modifier -int 0;ok
+# running "Top right screen corner → Desktop"
+# defaults write com.apple.dock wvous-tr-corner -int 4
+# defaults write com.apple.dock wvous-tr-modifier -int 0;ok
+# running "Bottom right screen corner → Start screen saver"
+# defaults write com.apple.dock wvous-br-corner -int 5
+# defaults write com.apple.dock wvous-br-modifier -int 0;ok
 
 ###############################################################################
 bot "Configuring Safari & WebKit"

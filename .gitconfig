@@ -1,9 +1,9 @@
 [user]
-	name = Adam Eivy
-	email = atomantic@gmail.com
+	name = RJ Robinson
+	email = Robert_Robinson3@cable.comcast.com
 [github]
     # https://github.com/blog/180-local-github-config
-    user = atomantic
+    user = rjrobinson
 
     # in a few months, look into the include directive (after bug fixes)
     token = MOVEALONG
@@ -187,7 +187,7 @@
 
 [credential]
     # cache creds (git help credential-cache)
-	helper = cache
+	helper = osxkeychain
 
 [filter "tabspace"]
 	clean = expand -t 4
@@ -197,3 +197,7 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

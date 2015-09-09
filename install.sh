@@ -3,10 +3,11 @@
 ###########################
 # This script installs the dotfiles and runs all other system configuration scripts
 # @author Adam Eivy
+#  Edited by : RJ ROBINSON
 ###########################
 
-DEFAULT_EMAIL="atomantic@gmail.com"
-DEFAULT_GITHUBUSER="atomantic"
+DEFAULT_EMAIL="robertj.robinson@gmail.com"
+DEFAULT_GITHUBUSER="rjrobinson"
 
 
 # include my library helpers for colorized echo and require_brew, etc
